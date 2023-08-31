@@ -4,8 +4,7 @@ import Link from "next/link";
  
 const MovieCard = ({ movie }: { movie: MovieType }) => {
   return (
-    <GridItem mb={4} display={"flex"} justifyContent={"center"}>
-      <Link href={"/product"}>
+    <GridItem mb={4} display={"flex"} flexDir={"column"} justifyContent={"center"}> 
         <Box position="relative">
           <Box height={{base: '', md:"360px"}} mx="auto"  rounded={"md"} overflow={"hidden"}>
             <Image src={movie.Poster} alt="shirt image" />
@@ -25,8 +24,7 @@ const MovieCard = ({ movie }: { movie: MovieType }) => {
               </Text>
             </Flex>
           </Flex>
-        </Box>
-      </Link>
+        </Box> 
     </GridItem>
   );
 };
