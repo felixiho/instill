@@ -39,7 +39,7 @@ const Pagination = ({ totalResults, currentPage, updatePage }: PaginationType) =
           <BiLastPage />
         </IconContext.Provider>
       </Box>
-      <Text fontWeight={"light"} pl={4}>{totalPages} pages</Text>
+      <Text fontWeight={"light"} pl={4}>{totalPages} page{totalPages > 1 ? 's' : ''}</Text>
     </Flex>
   );
 };
