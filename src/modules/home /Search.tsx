@@ -1,21 +1,14 @@
-import {
-  Box,
-  Flex,
-  Input,
-  InputGroup,
-  InputLeftElement,
-} from "@chakra-ui/react";
-import { colors } from "@/config/chakra";
-import { IconContext } from "react-icons";
-import { FaSearch } from "react-icons/fa";
+import { Box, Flex } from "@chakra-ui/react";
 import SearchBox from "@/components/common/SearchBox";
 
-const Search = () => {
+const Search = ({
+  searchMovies,
+}: {
+  searchMovies: (value: string) => void;
+}) => {
   return (
     <Box as="section" my={6}>
-      <Flex w="full" flexDir={"column"}
-          position={"relative"}
-          >
+      <Flex w="full" flexDir={"column"} position={"relative"}>
         <Box
           w="full"
           height={20}
@@ -23,13 +16,13 @@ const Search = () => {
         ></Box>
         <Flex
           position={"absolute"}
-          w="full" 
+          w="full"
           justifyContent={"center"}
-          zIndex={4444} 
-          px={4}  
+          zIndex={4444}
+          px={4}
           bottom={"-32px"}
         >
-          <SearchBox />
+          <SearchBox handleClick={searchMovies} />
         </Flex>
       </Flex>
     </Box>

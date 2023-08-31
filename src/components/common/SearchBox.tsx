@@ -12,15 +12,19 @@ import { useState } from "react";
 import { IconContext } from "react-icons";
 import { FaSearch } from "react-icons/fa";
 
-const SearchBox = () => {
-  const [show, setShow] = useState(false);
-  const handleClick = () => setShow(!show);
+const SearchBox = ({
+  handleClick,
+}: {
+  handleClick: (value: string) => void;
+}) => {
+  const [value, setValue] = useState("");
+
   return (
     <InputGroup
       borderColor={"white"}
       bg="white"
       boxShadow={"0px 8px 20px rgba(0,0,0,0.06)"}
-      maxW={"628px"} 
+      maxW={"628px"}
       alignItems={"center"}
       rounded={"lg"}
     >
@@ -38,27 +42,28 @@ const SearchBox = () => {
         _focusVisible={{ boxShadow: "white" }}
         fontWeight={"light"}
         placeholder="Search...."
+        onChange={(e) => setValue(e.target.value)}
         type="text"
         pr="100px"
         height="64px"
-      /> 
+      />
 
       <InputRightElement py={2} w="100px" my="auto" height={"64px"}>
         <Divider orientation="vertical" />
         <Button
           bg="transparent"
-          onClick={handleClick}
+          onClick={() => handleClick(value)}
           mx={4}
           _hover={{
-            background:'transparent',
+            background: "transparent",
             transform: "translate(-3px, 0)",
           }}
-          fontWeight={"normal"} 
+          fontWeight={"normal"}
         >
           Search
         </Button>
       </InputRightElement>
-    </InputGroup> 
+    </InputGroup>
   );
 };
 

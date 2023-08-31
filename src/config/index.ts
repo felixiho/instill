@@ -11,7 +11,7 @@ class Config<T extends { [key: string]: ConfigValue }> {
   }
 
   validate() {
-    Object.keys(this.configValues).forEach((key) => {
+    Object.keys(this.configValues).forEach((key) => { 
       if (this.configValues[key] === undefined) {
         throw new Error(
           `Undefined config value "${key}", ensure it exists in src/config/config.ts`
@@ -25,7 +25,7 @@ class Config<T extends { [key: string]: ConfigValue }> {
   }
 }
 
-const configObj = new Config(CONFIG)
+const configObj = new Config(CONFIG) 
 const config = configObj.get.bind(configObj)
 
 export default config

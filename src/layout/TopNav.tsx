@@ -19,7 +19,7 @@ const TopNav = () => {
       boxShadow={showBackground ? "rgba(149, 157, 165, 0.2) 0px 8px 24px" : ""}
     >
       <Flex justifyContent={"center"} my={3}>
-        <Heading>Movie Generator</Heading>
+        <Heading>Instill Education</Heading>
       </Flex>
     </Box>
   );
