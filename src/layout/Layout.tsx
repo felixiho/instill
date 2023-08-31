@@ -1,7 +1,5 @@
-import { ReactNode } from "react";
 import Head from "next/head";
 import { ChildrenProps } from "@/components/layouts/types";
-import TopNav from "./TopNav";
 
 const Layout = ({ children }: ChildrenProps) => {
   return (

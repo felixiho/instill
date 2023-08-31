@@ -1,5 +1,4 @@
  import config from "@/config";
-import { CONFIG } from "@/config/config";
 import fetch from "isomorphic-unfetch";
 
 export type QueryType = Record<string, string> 
@@ -16,7 +15,7 @@ export const apiFetchJson = async (query: QueryType, opts?: RequestInit) => {
 };
 
 // Requests to the omdbapi are mainly get requests and data is mostly static
-// we can cache in-memory to add an optimization layer
+// we can cache in-memory to add an extra optimization layer
 export const apiCachedFetchJson = async (
   query: QueryType,
   opts?: RequestInit

@@ -1,10 +1,8 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import React, { useContext } from "react";
-import { useTranslation } from "react-i18next";
 import CopyrightYearContext from "@/context/CopyrightYearContext";
 
 const CopyrightSection = () => {
-  const { t } = useTranslation();
   const copyRightYear = useContext(CopyrightYearContext);
   return (
     <Box

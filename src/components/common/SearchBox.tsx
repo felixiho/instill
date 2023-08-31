@@ -6,11 +6,9 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  FormControl,
-  FormLabel,
   InputRightElement,
 } from "@chakra-ui/react";
-import { FormEvent, FormEventHandler, useState } from "react";
+import { FormEvent, useState } from "react";
 import { IconContext } from "react-icons";
 import { FaSearch } from "react-icons/fa";
 import { ThreeDots } from "react-loader-spinner";

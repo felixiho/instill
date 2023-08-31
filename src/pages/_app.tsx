@@ -8,8 +8,7 @@ import '@fontsource/outfit/800.css'
 import '@fontsource/outfit/900.css'
 
 import type { ReactElement, ReactNode } from "react";
-import type { NextPage } from "next";
-import "@/styles/globals.css";
+import type { NextPage } from "next"; 
 import { ChakraProvider, CSSReset } from "@chakra-ui/react";
 import type { AppProps } from "next/app"; 
 import theme from "@/config/chakra";

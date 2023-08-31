@@ -1,4 +1,4 @@
-import { Grid, Heading, Flex } from "@chakra-ui/react";
+import { Grid, Flex } from "@chakra-ui/react";
 import { MovieType } from "./types";
 import MovieCard from "@/components/common/MovieCard";
 import Pagination from "@/components/shared/Pagination";

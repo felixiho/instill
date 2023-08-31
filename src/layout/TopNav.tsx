@@ -1,8 +1,5 @@
-import NotificationIcon from "@/components/common/NotificationIcon";
 import { useHomeContext } from "@/context/HomeContext";
 import { Box, Flex, Heading } from "@chakra-ui/react";
-import { useEffect } from "react";
-import { AiOutlineShopping, AiOutlineMessage } from "react-icons/ai";
 
 const TopNav = () => {
   const { showBackground } = useHomeContext();
