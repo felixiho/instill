@@ -4,7 +4,7 @@ To run
 ```bash
 # run app
 yarn dev
-# te
+# run tests
 yarn test
 ```
  
