@@ -15,7 +15,7 @@ const MoviesList = ({
   updatePage: (page: number) => void;
 }) => {
   return (
-    <Flex as="section" justifyContent={"center"}>
+    <Flex  as="section" justifyContent={"center"}>
       <Flex wrap="wrap" w="full" maxW="1140px" color="neutral.600">
         {totalResults > 1 && (
           <Pagination
