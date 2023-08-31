@@ -1,12 +1,12 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 
-const Title = ({ searchValue }: { searchValue: string }) => {
+const Title = ({ searchValue, totalResults }: { searchValue: string, totalResults: number }) => {
   return (
     <Flex w="full" flexDir={"column"} justifyContent={"center"} mb={10} mt={16}>
       <Heading textAlign={"center"}> Movie Finder</Heading>
       {searchValue ? (
         <Text fontWeight={"thin"} textAlign={"center"} mt={3}>
-          Showing results for: <b>{searchValue}</b>
+          Showing {totalResults} results for: <b>{searchValue}</b>
         </Text>
       ) : (
         <Text fontWeight={"thin"} textAlign={"center"} mt={3}>

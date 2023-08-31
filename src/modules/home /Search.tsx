@@ -3,8 +3,10 @@ import SearchBox from "@/components/common/SearchBox";
 
 const Search = ({
   searchMovies,
+  searching
 }: {
   searchMovies: (value: string) => void;
+  searching: boolean
 }) => {
   return (
     <Box as="section" my={6}>
@@ -22,7 +24,7 @@ const Search = ({
           px={4}
           bottom={"-32px"}
         >
-          <SearchBox handleClick={searchMovies} />
+          <SearchBox searching={searching} handleClick={searchMovies} />
         </Flex>
       </Flex>
     </Box>

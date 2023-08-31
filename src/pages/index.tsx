@@ -10,6 +10,7 @@ import Title from "@/modules/home /Title";
 import { apiCachedFetchJson } from "@/api";
 import MoviesList from "@/modules/home /MoviesList";
 import Pagination from "@/components/shared/Pagination";
+import logger from "@/config/logger";
 
 const Home: NextPageWithLayout = () => {
   const [searching, setSearching] = useState(false);
@@ -19,13 +20,10 @@ const Home: NextPageWithLayout = () => {
   const [totalResults, setTotalResults] = useState(0);
 
   useEffect(() => {
-    console.log({currentPage})
-    searchMovies(searchValue)
-  }, [currentPage])
-
+    searchMovies(searchValue);
+  }, [currentPage]);
 
   const searchMovies = (value: string) => {
-    console.log({ value });
     if (!value) return;
     setSearching(true);
     setSearchValue(value);
@@ -37,20 +35,28 @@ const Home: NextPageWithLayout = () => {
       .then((movies) => {
         setSearching(false);
         setMovies(movies.Search);
-        setTotalResults(parseInt(movies.totalResults))
+        setTotalResults(parseInt(movies.totalResults));
         console.log(movies);
       })
       .catch((error) => {
         setSearching(false);
+        logger.error("An error occurred getting results from omdb api", {
+          error,
+        });
         console.log({ error });
       });
   };
 
   return (
     <Box py={20} as="section">
-      <Search searchMovies={searchMovies} />
-      <Title searchValue={searchValue} /> 
-      <MoviesList updatePage={setCurrentPage} movies={movies}  currentPage={currentPage} totalResults={totalResults}/>
+      <Search searching={searching} searchMovies={searchMovies} />
+      <Title totalResults={totalResults} searchValue={searchValue} />
+      <MoviesList
+        updatePage={setCurrentPage}
+        movies={movies}
+        currentPage={currentPage}
+        totalResults={totalResults}
+      />
     </Box>
   );
 };
