@@ -7,7 +7,7 @@ const MovieCard = ({ movie }: { movie: MovieType }) => {
     <GridItem mb={4} display={"flex"} justifyContent={"center"}>
       <Link href={"/product"}>
         <Box position="relative">
-          <Box height={"340px"} mx="auto"  rounded={"md"} overflow={"hidden"}>
+          <Box height={{base: '', md:"360px"}} mx="auto"  rounded={"md"} overflow={"hidden"}>
             <Image src={movie.Poster} alt="shirt image" />
           </Box> 
         </Box>
